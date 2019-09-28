@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.protitle {
+  animation: pulsing 1s linear infinite;
+}
+
+@keyframes pulsing {
+  0% {color: grey}
+  50% {color: black}
+  100% {color: grey}
+}
