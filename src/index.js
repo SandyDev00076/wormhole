@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import { Provider } from 'react-redux';
+import { store } from './state/global.state';
 
 const startApp = () => {
-    ReactDOM.render(<App />, document.getElementById('root'));
+    ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+    , document.getElementById('root'));
 }
 
 if (!window.cordova) {
