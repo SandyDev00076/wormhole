@@ -1,0 +1,32 @@
+.talkingpage {
+    padding: 10px;
+}
+
+.actionbar {
+    position: absolute;
+    bottom: 10px;
+    width: 95%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.actionbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px grey;
+    font-size: 1.2em;
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.textarea {
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 10px !important;
+}

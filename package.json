@@ -52,5 +52,8 @@
     "platforms": [
       "android"
     ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2"
   }
 }

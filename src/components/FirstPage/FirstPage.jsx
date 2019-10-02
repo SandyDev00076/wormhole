@@ -8,7 +8,7 @@ import { setTicket } from '../../state/actions/processActions';
 import { generateTicket } from '../../utils/ticketGenerator';
 import { getProcessData } from '../../state/providers/processProvider';
 
-export const FirstHelloPage = () => {
+export const FirstHelloPage = (props) => {
     const [qrcode, toggleQrCode] = useState(false);
     return (
         <div className="firstpage">
@@ -22,7 +22,7 @@ export const FirstHelloPage = () => {
             <>
                 <Button variant="outline-info" onClick={generateATicket}>Connect</Button>
                 &nbsp; / &nbsp;
-                <Button variant="outline-success">Create</Button>
+                <Button variant="outline-success" onClick={goToTalkingPage}>Create</Button>
             </>
             :
             <>
@@ -46,5 +46,9 @@ export const FirstHelloPage = () => {
     function cancelQrCode() {
         setTicket('');
         toggleQrCode(false);
+    }
+
+    function goToTalkingPage() {
+        props.history.push('/talk');
     }
 }
