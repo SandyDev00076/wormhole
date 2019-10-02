@@ -6,6 +6,7 @@
     position: absolute;
     bottom: 10px;
     width: 95%;
+    /*doubtful as to width of the action bar*/
 
     display: flex;
     justify-content: space-around;
