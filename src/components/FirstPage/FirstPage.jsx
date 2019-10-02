@@ -5,6 +5,7 @@ import {
 } from 'react-bootstrap';
 import { setTicket } from '../../state/actions/processActions';
 import { generateTicket } from '../../utils/ticketGenerator';
+import { scanQrCode } from '../../utils/scanQrCode';
 
 export const FirstHelloPage = (props) => {
     return (
@@ -23,8 +24,9 @@ export const FirstHelloPage = (props) => {
     );
 
     function connectToOther() {
-        // here the code will be written for scanning the Qr Code
-        
+        scanQrCode(code => {
+            alert(`Got a code ${code}`);
+        });
     }
 
     function goToTalkingPage() {
