@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FirstPage.css';
 import {
     Button
@@ -24,6 +24,7 @@ export const FirstHelloPage = (props) => {
 
     function connectToOther() {
         // here the code will be written for scanning the Qr Code
+        
     }
 
     function goToTalkingPage() {
