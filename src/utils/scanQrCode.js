@@ -20,3 +20,11 @@ export function scanQrCode(afterGettingCode) {
         }
     });
 }
+
+export function stopScanning(afterCancelling) {
+    window.QRScanner.destroy(afterCancelling);
+}
+
+export function resumeScanning(afterResuming) {
+    window.QRScanner.resumePreview(afterResuming);
+}
