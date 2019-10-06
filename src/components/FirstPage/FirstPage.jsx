@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FirstPage.css';
 import {
-    Button, Toast
+    Button
 } from 'react-bootstrap';
 import { setTicket } from '../../state/actions/processActions';
 import { generateTicket, checkCode } from '../../utils/ticketGenerator';
