@@ -7,6 +7,8 @@ import { setTicket } from '../../state/actions/processActions';
 import { generateTicket, checkCode } from '../../utils/ticketGenerator';
 import { scanQrCode, stopScanning, resumeScanning } from '../../utils/scanQrCode';
 import { MyToast } from '../../widgets/Toast/Toast';
+import { AppConstants } from '../../environment/constants';
+import { postData } from '../../services/http.service';
 
 export const FirstHelloPage = (props) => {
     const [scanning, setScanning] = useState(false);
@@ -24,7 +26,7 @@ export const FirstHelloPage = (props) => {
                 <p className="description">Using Wormhole, you can connect and share with multiple devices!</p>
                 <Button variant="outline-info" onClick={connectToOther}>Connect</Button>
                 &nbsp; / &nbsp;
-                <Button variant="outline-success" onClick={goToTalkingPage}>Create</Button>
+                <Button variant="outline-success" onClick={createASession}>Create</Button>
             </>
             :
             <>
@@ -71,12 +73,15 @@ export const FirstHelloPage = (props) => {
         });
     }
 
-    function goToTalkingPage() {
-        generateATicket();
-        props.history.push('/talk');
-    }
+    function createASession() {
+        const code = generateTicket();
+        setTicket(code);
 
-    function generateATicket() {
-        setTicket(generateTicket());
+        // create a session
+        postData(AppConstants.sessionUrl, { code }).then(res => {
+            console.log(res);
+            props.history.push('/talk');
+        }).catch(err => console.log(err));
+
     }
 }
