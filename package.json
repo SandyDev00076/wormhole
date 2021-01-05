@@ -7,7 +7,7 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "cordova-android": "^7.1.4",
     "cordova-plugin-qrscanner": "^3.0.1",
